@@ -1,0 +1,29 @@
+.reveal .red,
+.reveal .controls a.enabled {
+  color: #d3222a;
+}
+.reveal .progress span {
+  background: #d3222a;
+}
+.reveal .logo {
+  margin: 0;
+}
+.reveal a:not(.image) {
+  color: #d3222a;
+}
+.reveal a:not(.image):hover {
+  background: hsla(185, 25%, 20%, 0.0);
+  color: #d3222a;
+  text-decoration: underline;
+}
+.reveal .controls a:hover {
+  text-decoration: none;
+}
+.reveal section img {
+  background: none;
+  border: 0px;
+
+  -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 0px rgba(0, 0, 0, 0.15);
+}
