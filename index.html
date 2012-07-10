@@ -33,14 +33,195 @@
 			<div class="slides">
 				<section>
 					<h4 class="red"><img class="logo" src="assets/images/logo.png" /> Code Foo</h4>
-					<h1>Reveal.js</h1>
-					<h3 class="inverted">CSS 3D Presentations</h3>
+					<h1>Using Git</h1>
+					<h3 class="inverted">Here At IGN</h3>
 					<script>
 						// Delicously hacky. Look away.
 						if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
 					</script>
 				</section>
-				
+
+				<section>
+					<section>
+						<h2>What is Git?</h2>
+						<p>
+							You should already have some idea, since you<br />used Git to apply for Code Foo.
+						</p>
+					</section>
+					<section>
+						<blockquote cite="http://en.wikipedia.org/wiki/Git_(software)">
+							Git is a distributed revision control and source code management system ...
+						</blockquote>
+						<p>
+							<i><small>- <a href="http://en.wikipedia.org/wiki/Git_(software)">Wikipedia</a></small></i>
+						</p>
+						<p>
+							<i>Distributed</i> means you ask people to <i>pull</i> your changes instead of
+							<i>pushing</i> your changes to a central repository.
+						</p>
+					</section>
+					<section>
+						<blockquote cite="http://git-scm.com/">
+							... with features like cheap local branching, convenient staging areas, and multiple workflows
+						</blockquote>
+						<p>
+							<i><small>- <a href="http://git-scm.com/">git-scm.com</a></small></i>
+						</p>
+						<p>
+							And it's fast, too.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Get Git</h2>
+					<ol>
+						<li>Install <a href="http://mxcl.github.com/homebrew/">homebrew</a></li>
+						<li><code style="font-size: 90%;">brew install git</code></li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Set Up</h2>
+					<ul style="list-style: none;">
+						<li><code style="font-size: 90%;">git config --global user.name Your Name</code></li>
+						<li><code style="font-size: 90%;">git config --global user.email you@ign.com</code></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Terminology</h2>
+					<ul>
+						<li>Repository</li>
+						<li>Fork</li>
+						<li>Remote</li>
+						<li>Commit</li>
+						<li>Branch</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Repository</h2>
+						<p>
+							The complete collection of a project's files<br />and the history of those files.
+						</p>
+					</section>
+					<section>
+						<p>
+							Repositories are mirrored to GitHub<br />and shared with all collaborators.
+							<br /><img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/adam.png" height="160" width="160" style="margin-left: 20px; vertical-align: middle;" />
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Fork</h2>
+						<p>
+							If you don't have write access to a repository, you can make your own copy of it and commit to the copy.
+						</p>
+					</section>
+					<section>
+						<p>
+							You can publish your fork. You can also ask the original repository's owner to pull your changes.
+						</p>
+						<p style="margin-top: 1em;">
+							GitHub makes this process very, very easy.
+							<br /><img src="assets/images/easy_button.png" />
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Remote</h2>
+						<p>
+							A copy of a repository, typically<br />hosted someplace like GitHub.
+						</p>
+					</section>
+					<section>
+						<p>
+							When you clone a repository, the source repository is automatically added as a remote called <code>origin</code>.
+						</p>
+					</section>
+					<section>
+						<p>
+							You can push changes from your local repository to <code>origin</code> (or any other remotes you configure).
+						</p>
+						<br /><img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" /> ►
+						<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
+					</section>
+					<section>
+						<p>
+							You can also pull changes from <code>origin</code><br />into your local repository.
+						</p>
+						<br /><img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
+						<img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" />
+					</section>
+					<section>
+						<p>
+							Your local repository remembers the state of each remote. This state is updated every time you do
+							<br />a <code>git fetch</code>. (<code>git pull</code> uses <code>git fetch</code>)
+						</p>
+						<br /><img src="assets/images/macbook_pro_with_octocat.png" height="256" width="256" style="vertical-align: middle;" /> ◄►
+						<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Commit</h2>
+						<p>
+							A change to a repository, including all of the<br />metadata associated with that change.
+						</p>
+					</section>
+					<section>
+						<p>
+							Metadata includes the author, the date, a short log message, and the state of all files in the repository.
+							<br /><img src="assets/images/git_commit.png" height="404" width="296" />
+						</p>
+					</section>
+					<section>
+						<p>
+							The first commit in a repository has no parents.<br />Most commits have one parent, but some commits
+							<br />can have more than one parent.
+							<br /><img src="assets/images/git_commit_parents.png" />
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Branch</h2>
+						<p>
+							A line of development; a series of commits.
+						</p>
+					</section>
+					<section>
+						<p>
+							Each commit already knows its parent, so a branch only needs to reference the last commit in the branch.
+							<br /><img src="assets/images/git_branch_symref.png" />
+						</p>
+					</section>
+					<section>
+						<p>
+							Branches allow development to occur in parallel.
+							<br /><img src="assets/images/git_branches.png" height="470" width="659" />
+						</p>
+					</section>
+					<section>
+						<p>
+							Branches are usually merged with other branches to reunite separate development efforts.
+							<br /><img src="assets/images/git_merges.png" height="471" width="837" />
+						</p>
+					</section>
+				</section>
+
+<!-- ... -->
+
 				<section>
 					<h2>Heads Up</h2>
 					<p>
