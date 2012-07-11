@@ -85,7 +85,7 @@
 							Most of us actually install Git with <a href="http://mxcl.github.com/homebrew/">Homebrew</a>,
 							which we also use to install other stuff like memcache.
 						</p>
-						<p style="margin-top: 1em;">
+						<p style="margin-top: 0.8em;">
 							Skip the "GitHub for Mac" GUI; if you want a GUI,<br />try <a href="http://gitx.frim.nl/index.html">GitX</a> instead.
 						</p>
 					</section>
@@ -131,7 +131,7 @@
 						<p>
 							You can publish your fork. You can also ask the original repository's owner to pull your changes.
 						</p>
-						<p style="margin-top: 1em;">
+						<p style="margin-top: 0.8em;">
 							GitHub makes this process very, very easy.
 							<br /><img src="assets/images/easy_button.png" />
 						</p>
@@ -242,214 +242,425 @@
 							<br /><img src="assets/images/git_merges.png" height="471" width="837" />
 						</p>
 					</section>
-				</section>
-
-<!-- ... -->
-
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is an easy to use, HTML based, presentation tool. You'll need a modern browser with 
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-					<p>
-						<i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
-					</p>
-				</section>
-				
-				<!-- Example of nested vertical slides -->
-				<section>
 					<section>
-						<h2>Vertical Slides</h2>
 						<p>
-							Slides can be nested inside of other slides,<br/>
-							try pressing <a href="#/2/1">down</a>.
+							By convention, the "main" branch is called <code>master</code>.
 						</p>
-						<a href="#/2/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);">
-						</a>
 					</section>
 				</section>
 
 				<section>
-					<h2>Holistic Overview</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview!
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like:
-					</p>
+					<h2>Common Tasks</h2>
 					<ul>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=linear">Linear</a></li>
+						<li>Cloning</li>
+						<li>Branching</li>
+						<li>Working</li>
+						<li>Checking Status</li>
+						<li>Viewing Changes</li>
+						<li>Discarding Changes</li>
+						<li>Adding Changes to the Index</li>
+						<li>Committing</li>
+						<li>Comparing with <code>master</code></li>
+						<li>Pushing</li>
+						<li>Pulling</li>
+						<li>Merging</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Marvelous Unordered List</h2>
+					<section>
+						<h2>Cloning</h2>
+						<code>git clone git@github.com:ign/project.git</code>
+						<p style="margin-top: 0.8em;">
+							Makes a local copy of the remote<br />repository for you to work in.
+						</p>
+						<p>
+							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" />
+						</p>
+					</section>
+					<section>
+						<p>
+							Each project has its own unique URL; check the project's page on GitHub for the URL you should use.
+							<br /><img src="assets/images/git_url.png" />
+						</p>
+					</section>
+					<section>
+						<p>Unless you <i>really</i> screw up your local repository, you should only need to clone each project once.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Branching</h2>
+						<code>git checkout -b &lt;branch&gt;</code>
+						<p style="margin-top: 0.8em;">
+							Creates a new branch off of the current branch's latest commit. It also switches to the new branch.
+							<br /><img src="assets/images/git_branches.png" height="314" width="440" />
+						</p>
+					</section>
+					<section>
+						<p>You should create a branch for every feature<br />or bug you work on. More on this later.</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Working</h2>
+					<img src="assets/images/programming.gif" />
+				</section>
+
+				<section>
+					<section>
+						<h2>Checking Status</h2>
+						<code>git status</code>
+						<p style="margin-top: 0.8em;">
+							Shows you the state of your working directory,<br />the index, and the remote.
+						</p>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;"># On branch master
+# Your branch is ahead of 'origin/master' by 5 commits.
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   index.html
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	assets/images/git_url.png
+#	assets/images/programming.gif
+						</code></pre>
+					</section>
+					<section>
+						<p><code>git status</code> answers questions like</p>
+						<ul style="margin-top: 0.8em;">
+							<li>What files have I added to the index?</li>
+							<li>What files might I need to add to the<br />index before I commit?</li>
+							<li>Do I need to push?</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Viewing Changes</h2>
+						<code>git diff</code>
+						<p style="margin-top: 0.8em;">
+							Shows you the changes in your working<br />directory relative to the index.
+						</p>
+					</section>
+					<section>
+						<p>
+							So if you add a change to the index, it won't show up in <code>git diff</code> anymore.
+							This lets you add changes to the index one by one until <code>git diff</code> output is empty.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Discarding Changes</h2>
+						<code>git checkout -- &lt;file&gt;</code>
+						<p style="margin-top: 0.8em;">
+							Discards uncommitted changes in your working<br />directory by re-checking out the file.
+						</p>
+					</section>
+					<section>
+						<p>
+							<code>git checkout</code> can also take a branch argument,<br />so the <code>--</code> means
+							"what comes after this is a file".
+						</p>
+					</section>
+					<section>
+						<p>
+							This operation is called "revert" in some other systems (CVS, Subversion, Mercurial)
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Adding Changes to the Index</h2>
+						<code>git add &lt;file&gt;</code>
+						<p style="margin-top: 0.8em;">
+							Adds a file (or the changes to a file, if the file is<br />already managed by Git) to the index.
+						</p>
+					</section>
+					<section>
+						<p>
+							Unlike some other systems, you have to add a file<br />to the index every time it changes,
+							not just the<br />first time you add the file.
+						</p>
+					</section>
+					<section>
+						<p>
+							To view changes that have been staged in the index, use
+						</p>
+						<code>git diff --cached</code>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Committing</h2>
+						<code>git commit</code>
+						<p style="margin-top: 0.8em;">
+							You will be prompted for a commit message,<br />then the changes staged in the index<br />will become an actual commit.
+						</p>
+					</section>
+					<section>
+						<p>
+							The first line of a commit message should be<br />a short summary of the changes you made<br />(50 characters or less).
+						</p>
+					</section>
+					<section>
+						<p>
+							If necessary, a more detailed explanation (perhaps<br />of <i>why</i> you made the change) should follow<br />after an empty blank line.
+						</p>
+					</section>
+					<section>
+						<p>
+							More guidelines (and rationale) can be<br />found in this <a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">blog post</a>.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Comparing with master</h2>
+						<code>git diff master...&lt;branch&gt;</code>
+						<p style="margin-top: 0.8em;">
+							Shows the changes in your branch that are not in master.
+						</p>
+					</section>
+					<section>
+						<p>
+							You should compare your branch with master before you push (publish your code) to make sure the changes are what you think they should be.
+						</p>
+					</section>
+					<section>
+						<p>
+							Changes in master that are not in your branch will not be shown. To show the actual diff, use two dots instead.
+						</p>
+						<code>git diff master..&lt;branch&gt;</code>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Pushing</h2>
+						<code>git push -u origin &lt;branch&gt;</code>
+						<p style="margin-top: 0.8em;">
+							Pushes changes in <code>branch</code> to <code>origin</code>, making<br />your changes accessible to others.
+						</p>
+						<p>
+							<img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
+						</p>
+					</section>
+					<section>
+						<p>
+							The <code>-u</code> argument sets up your local branch<br />to track the remote branch so it will be<br />updated if you do a <code>git pull</code> later.
+						</p>
+					</section>
+					<section>
+						<p>
+							It's a good idea to push at least once a day<br />to ensure your work is backed up in case<br />something bad happens to your laptop.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Pulling</h2>
+						<code>git pull</code>
+						<p style="margin-top: 0.8em;">
+							Updates your current branch with<br />changes from <code>origin</code>.
+						</p>
+						<p>
+							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" />
+						</p>
+					</section>
+					<section>
+						<p>
+							This is actually a shortcut for two other operations:<br /><code>git fetch</code> and <code>git merge</code>.
+						</p>
+					</section>
+					<section>
+						<h2>git fetch</h2>
+						<p>
+							Downloads changes from a remote repository, updating your local repository. Your local branches and working directory are <i>not</i> updated.
+						</p>
+						<p>
+							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/macbook_pro_with_octocat.png" height="256" width="256" style="vertical-align: middle;" />
+						</p>
+					</section>
+					<section>
+						<h2>git merge</h2>
+						<p>
+							The newly-downloaded changes from the remote branch will be merged into your current local branch.<sup>*</sup>
+							<br />The working directory is also updated.
+						</p>
+						<p style="margin-top: 0.8em;">
+							<i><small>*If your current local branch is configured to track a remote branch</small></i>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Merging</h2>
+						<code>git merge &lt;branch&gt;</code>
+						<p style="margin-top: 0.8em;">
+							Merges changes from <code>branch</code> into your current branch.
+							<br /><img src="assets/images/git_merges.png" height="314" width="558" />
+						</p>
+					</section>
+					<section>
+						<p>There are two typical reasons to do this.</p>
+					</section>
+					<section>
+						<p>If you're working on a branch for a long time, you will want to periodically merge <code>master</code> into your branch.</p>
+<!-- FIXME: diagram -->
+					</section>
+					<section>
+						<p>When you're done with a branch, you will want to<br />merge your branch into <code>master</code>.</p>
+<!-- FIXME: diagram -->
+					</section>
+					<section>
+<!-- FIXME: talk about merge conflicts -->
+					</section>
+				</section>
+
+				<section>
+					<h2>Workflow</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>When to Branch</li>
+						<li>Pull Requests</li>
 					</ul>
 				</section>
-				
+
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
+					<section>
+						<h2>When to Branch</h2>
+						<p>
+ 							You should create a branch for every<br />feature or bug you work on.
+						</p>
+					</section>
+					<section>
+						<p>
+ 							Branches allow you (or us as a team) to<br />work on separate things in parallel.
+						</p>
+					</section>
+					<section>
+						<p>
+ 							These things can then be reviewed,<br />tested, and merged separately.
+						</p>
+					</section>
+					<section>
+						<p>
+ 							Keeping changes isolated until they're ready keeps your <code>master</code> branch deployable at all times.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Pull Requests</h2>
+						<p>
+ 							GitHub pull requests are an easy way to track proposed changes. Just push your branch, then open a pull request.
+						</p>
+					</section>
+					<section>
+						<p>
+ 							Everyone with write access to the target repository<br />will be notified. The change can be discussed as<br />a whole or line by line.
+						</p>
+					</section>
+					<section>
+						<p>
+ 							Generally a reviewer would accept your pull request by merging the changes, but most projects use a shared repository,
+							so you may be asked to merge and<br />close your own pull request.
+						</p>
+					</section>
+					<section>
+						<p>
+ 							What happens after the code is merged<br />depends on the project.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Final Thoughts</h2>
+					<p>(Yes, this will be over soon.)</p>
+				</section>
+
+				<section>
+					<h2>Branch and Commit Often</h2>
+					<p>
+						Branches are cheap, and commits are fast.
+					</p>
+					<p style="margin-top: 0.8em;">
+						<i><small>(But don't over-do it, every commit should at least parse/build).</small></i>
+					</p>
+				</section>
+
+				<section>
+					<h2>Deleting Code</h2>
+					<p>
+						Don't be afraid to delete code, or even entire files. As long as that code was previously committed, it will be in
+						the revision history forever, so we can always get it back.
+					</p>
+				</section>
+
+				<section>
+					<h2>Large Blobs</h2>
+					<p>
+						Don't add large binary blobs to the repository. Once you add it, even if you delete it, it will take up space in
+						the revision history forever.
+					</p>
 				</section>
 
 				<section>
 					<section data-state="alert">
-						<h2>Global State</h2>
+						<h2>Argumented git pull</h2>
 						<p>
-							Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-							will be added as a class to the document element when the slide is open. This let's you
-							apply broader style changes, like switching the background.
+							Do <i>not</i> use <code>git pull</code> with arguments,<br />e.g., <code>git pull origin master</code>.
 						</p>
-						<a href="#/7/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						</a>
+						<p style="margin-top: 0.8em;">
+							It doesn't do what you think it does.
+						</p>
 					</section>
-					<section data-state="blackout">
-						<h2>"blackout"</h2>
-						<a href="#/7/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						</a>
+					<section>
+						<p><small style="vertical-align: middle;">
+							<code>git pull origin master</code> merges changes from the remote <code>master</code> branch directly into your current local branch.
+							This happens even if your current local branch is not <code>master</code>.
+							<br />Further, your local copy of <code>origin/master</code> is not updated.
+						</small></p>
 					</section>
-					<section data-state="soothe">
-						<h2>"soothe"</h2>
-						<a href="#/7/0" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);">
-						</a>
+					<section>
+						<p>
+							<code>git push origin &lt;branch&gt;</code> is perfectly fine.
+						</p>
+						<p style="margin-top: 0.8em;"><small style="margin-top: 0.8em;">
+							In fact, it is encouraged, otherwise you will push all branches.
+							Any local branches that are out of date will fail to push, and any local branches that have been deleted on the remote will be re-created.
+						</small></p>
 					</section>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	alert( '"customevent" has fired' );
-} );
-					</code></pre>
 				</section>
 
 				<section>
-					<h2>Clever Quotes</h2>
+					<h2>Getting Help</h2>
 					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-				
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code contenteditable>
-var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-				document.body.style['MozPerspective'] !== undefined ||
-				document.body.style['perspective'] !== undefined;
-
-function linkify( selector ) {
-    if( supports3DTransforms ) {
-        
-        var nodes = document.querySelectorAll( selector );
-
-        for( var i = 0, len = nodes.length; i < len; i++ ) {
-            var node = nodes[i];
-
-            if( !node.className || !node.className.match( /roll/g ) ) {
-                node.className += ' roll';
-                node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-            }
-        };
-    }
-}
-
-linkify( 'a' );
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-				
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,<br/>
-						<a href="#/2/3">like this</a>.
+						Google, <code>git help &lt;command&gt;</code>, or<br />ask one of the engineers!
 					</p>
 				</section>
 
-				<section>
-					<h2>Fragmented Views</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<ol>
-						<li class="fragment"><code>any type</code></li>
-						<li class="fragment"><em>of view</em></li>
-						<li class="fragment"><strong>fragments</strong></li>
-					</ol>
-				</section>
-				
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
-						<img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png">
-					</a>
-				</section>
-				
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on github</a></li>
-						<li><a href="http://hakim.se/projects/reveal-js">Read more on my site</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
-				
 				<section>
 					<h1>THE END</h1>
-					<h3 class="inverted">BY Hakim El Hattab / hakim.se</h3>
+					<h3 class="inverted">Any questions?</h3>
 				</section>
 			</div>
 
