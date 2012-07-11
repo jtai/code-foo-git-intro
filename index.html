@@ -520,18 +520,28 @@
 						</p>
 					</section>
 					<section>
-						<p>There are two typical reasons to do this.</p>
+						<p>
+							There are two typical reasons to do this.
+						</p>
 					</section>
 					<section>
-						<p>If you're working on a branch for a long time, you will want to periodically merge <code>master</code> into your branch.</p>
-<!-- FIXME: diagram -->
+						<p>
+							If you're working on a branch for a long time, you will want to periodically merge <code>master</code> into your branch.
+							<br /><img src="assets/images/git_merge_from_master.png" height="317" width="684" />
+							<br />Switch to your branch with <code>git checkout &lt;branch&gt;</code>, then do <code>git merge master</code>.
+						</p>
 					</section>
 					<section>
-						<p>When you're done with a branch, you will want to<br />merge your branch into <code>master</code>.</p>
-<!-- FIXME: diagram -->
+						<p>
+							When you're done with a branch, you will want to<br />merge your branch into <code>master</code>.
+							<br /><img src="assets/images/git_merges.png" height="314" width="558" />
+							<br />Switch to <code>master</code> with <code>git checkout master</code>,<br />then do <code>git merge &lt;branch&gt;</code>.
+						</p>
 					</section>
 					<section>
-<!-- FIXME: talk about merge conflicts -->
+						<p>
+							If conflicting changes are introduced in the two branches being merged, a merge conflict will occur. Ask for help.
+						</p>
 					</section>
 				</section>
 
