@@ -147,6 +147,9 @@
 						<p>
 							When you clone a repository, the source repository is automatically added as a remote called <code>origin</code>.
 						</p>
+						<p style="margin-top: 0.8em;">
+							If you're cloning a fork, you probably want to add a remote pointing to the original repository. By convention, this remote is called <code>upstream</code>.
+						</p>
 					</section>
 					<section>
 						<p>
@@ -249,7 +252,8 @@
 
 				<section>
 					<h2>Common Tasks</h2>
-					<ul>
+					<ul style="font-size: 80%; line-height: 120%;">
+						<li>Forking</li>
 						<li>Cloning</li>
 						<li>Branching</li>
 						<li>Working</li>
@@ -267,6 +271,31 @@
 
 				<section>
 					<section>
+						<h2>Forking</h2>
+						<p>
+							Makes a personal copy of a repository.
+							<br /><img src="assets/images/github_fork_btn.png" />
+						</p>
+					</section>
+					<section>
+						<p>
+							You will want to do all your branching<br />and committing in your own fork.
+						</p>
+					</section>
+					<section>
+						<p>
+							When you're ready to ship, submit a pull request.<br />(More on pull requests later.)
+						</p>
+					</section>
+					<section>
+						<p>
+							GitHub has a <a href="https://help.github.com/articles/fork-a-repo">guide</a> on forks.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
 						<h2>Cloning</h2>
 						<code>git clone git@github.com:ign/project.git</code>
 						<p style="margin-top: 0.8em;">
@@ -280,11 +309,18 @@
 					<section>
 						<p>
 							Each project has its own unique URL; check the project's page on GitHub for the URL you should use.
-							<br /><img src="assets/images/git_url.png" />
+							<br /><img src="assets/images/github_project_url.png" />
 						</p>
 					</section>
 					<section>
-						<p>Unless you <i>really</i> screw up your local repository, you should only need to clone each project once.</p>
+						<p>
+							If you have a fork, make sure to clone the fork,<br />not the original repository.
+						</p>
+					</section>
+					<section>
+						<p>
+							Unless you <i>really</i> screw up your local repository, you should only need to clone each project once.
+						</p>
 					</section>
 				</section>
 
@@ -299,6 +335,9 @@
 					</section>
 					<section>
 						<p>You should create a branch for every feature<br />or bug you work on. More on this later.</p>
+					</section>
+					<section>
+						<p>To switch branches, use <code>git checkout &lt;branch&gt;</code> (without the <code>-b</code>).</p>
 					</section>
 				</section>
 
@@ -499,6 +538,11 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					</section>
 					<section>
 						<p>
+							If you want to pull from <code>upstream</code>, use<br /><code>git pull upstream</code>.
+						</p>
+					</section>
+					<section>
+						<p>
 							This is actually a shortcut for two other operations:<br /><code>git fetch</code> and <code>git merge</code>.
 						</p>
 					</section>
@@ -520,6 +564,11 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 						</p>
 						<p style="margin-top: 0.8em;">
 							<i><small>*If your current local branch is configured to track a remote branch</small></i>
+						</p>
+					</section>
+					<section>
+						<p>
+							Since a merge is performed, you should make sure your working directory is clean before doing a <code>git pull</code>.
 						</p>
 					</section>
 				</section>
@@ -596,19 +645,19 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 						<h2>Pull Requests</h2>
 						<p>
  							GitHub pull requests are an easy way to track proposed changes. Just push your branch, then open a pull request.
-							<br /><img src="assets/images/git_url.png" />
+							<br /><img src="assets/images/github_pull_request_btn.png" />
 						</p>
 					</section>
 					<section>
 						<p>
  							Everyone with write access to the target repository<br />will be notified. The change can be discussed as<br />a whole or line by line.
-							<br /><img src="assets/images/pull_request.png" />
+							<br /><img src="assets/images/github_pull_request.png" />
 						</p>
 					</section>
 					<section>
 						<p>
- 							Generally a reviewer would accept your pull request by merging the changes, but most projects use a shared repository,
-							so you may be asked to merge and<br />close your own pull request.
+ 							Generally a reviewer would accept your pull request by merging the changes, but if your project uses a shared repository,
+							you may be asked to merge and<br />close your own pull request.
 						</p>
 					</section>
 					<section>
@@ -653,7 +702,7 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					<section data-state="alert">
 						<h2>Argumented git pull</h2>
 						<p>
-							Do <i>not</i> use <code>git pull</code> with arguments,<br />e.g., <code>git pull origin master</code>.
+							Do <i>not</i> use <code>git pull</code> with a fourth refspec argument,<br />e.g., <code>git pull origin master</code>.
 						</p>
 						<p style="margin-top: 0.8em;">
 							It doesn't do what you think it does.
@@ -662,7 +711,7 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					<section>
 						<p>
 							<code>git pull origin master</code> merges changes from the remote <code>master</code> branch directly into your current local branch.
-							This happens even if your current local branch is not <code>master</code>.
+							This happens even if your current local branch<br />is not <code>master</code>.
 							Further, your local copy of <code>origin/master</code> is not updated.
 						</p>
 					</section>
@@ -672,7 +721,7 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 						</p>
 						<p style="margin-top: 0.8em;">
 							In fact, it is encouraged, otherwise you will push all branches.
-							Any local branches that are out of date will fail to push, and any local branches that have been deleted on the remote will be re-created.
+							Any local branches that are out of date will fail to push, and any local branches that have been<br />deleted on the remote will be re-created.
 						</p>
 					</section>
 				</section>
