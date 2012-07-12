@@ -18,8 +18,6 @@
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/ign.css">
 		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
-
-		<link rel="stylesheet" href="lib/solarized_light.css">
 	</head>
 	
 	<body>
@@ -53,7 +51,7 @@
 							Git is a distributed revision control and source code management system ...
 						</blockquote>
 						<p>
-							<i><small>- <a href="http://en.wikipedia.org/wiki/Git_(software)">Wikipedia</a></small></i>
+							<i><small style="vertical-align: middle;">- <a href="http://en.wikipedia.org/wiki/Git_(software)">Wikipedia</a></small></i>
 						</p>
 						<p>
 							<i>Distributed</i> means you ask people to <i>pull</i> your changes instead of
@@ -65,7 +63,7 @@
 							... with features like cheap local branching, convenient staging areas, and multiple workflows
 						</blockquote>
 						<p>
-							<i><small>- <a href="http://git-scm.com/">git-scm.com</a></small></i>
+							<i><small style="vertical-align: middle;">- <a href="http://git-scm.com/">git-scm.com</a></small></i>
 						</p>
 						<p>
 							And it's fast, too.
@@ -226,6 +224,11 @@
 					</section>
 					<section>
 						<p>
+							By convention, the "main" branch is called <code>master</code>.
+						</p>
+					</section>
+					<section>
+						<p>
 							Each commit already knows its parent, so a branch only needs to reference the last commit in the branch.
 							<br /><img src="assets/images/git_branch_symref.png" />
 						</p>
@@ -240,11 +243,6 @@
 						<p>
 							Branches are usually merged with other branches to reunite separate development efforts.
 							<br /><img src="assets/images/git_merges.png" height="471" width="837" />
-						</p>
-					</section>
-					<section>
-						<p>
-							By convention, the "main" branch is called <code>master</code>.
 						</p>
 					</section>
 				</section>
@@ -379,7 +377,7 @@
 					</section>
 					<section>
 						<p>
-							This operation is called "revert" in some other systems (CVS, Subversion, Mercurial)
+							This operation is called "revert" in some other systems<br />(CVS, Subversion, Mercurial)
 						</p>
 					</section>
 				</section>
@@ -423,6 +421,17 @@
 						<p>
 							If necessary, a more detailed explanation (perhaps<br />of <i>why</i> you made the change) should follow<br />after an empty blank line.
 						</p>
+						<pre><code contenteditable style="font-size: 16px; margin-top: 20px;">commit b8803de64e724cde0e802053e031189726b5caed
+Author: Jonathan Tai <jtai@ign.com>
+Date:   Fri Jul 6 11:34:00 2012 -0700
+
+    Updated object migration to use new release status field for all regions
+    
+    This applies the same change as c1a28a09c0721be9105895992524f5c1105ddbc8,
+    except for UK, AU, and JP. Since the Object API is already using the new
+    "status" field, UK/AU/JP status updates were not being written to the API
+    because the migration script was setting the old "released" field.
+</code></pre>
 					</section>
 					<section>
 						<p>
@@ -702,7 +711,7 @@
 		</div>
 
 		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
-		<script src="lib/highlight.js"></script>
+		<!--<script src="lib/highlight.js"></script>-->
 		<script src="lib/classList.js"></script>
 		
 		<script src="js/reveal.js"></script>
