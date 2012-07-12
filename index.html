@@ -122,6 +122,9 @@
 					<section>
 						<h2>Fork</h2>
 						<p>
+							A personal copy of a repository.
+							<br /><img src="assets/images/octocat_with_ign.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
 							If you don't have write access to a repository, you can make your own copy of it and commit to the copy.
 						</p>
 					</section>
@@ -147,31 +150,33 @@
 						<p>
 							When you clone a repository, the source repository is automatically added as a remote called <code>origin</code>.
 						</p>
-						<p style="margin-top: 0.8em;">
+					</section>
+					<section>
+						<p>
 							If you're cloning a fork, you probably want to add a remote pointing to the original repository. By convention, this remote is called <code>upstream</code>.
 						</p>
 					</section>
 					<section>
 						<p>
 							You can push changes from your local repository to <code>origin</code> (or any other remotes you configure).
+							<br /><img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
 						</p>
-						<br /><img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" /> ►
-						<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
 					</section>
 					<section>
 						<p>
 							You can also pull changes from <code>origin</code><br />into your local repository.
+							<br /><img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" />
 						</p>
-						<br /><img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
-						<img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" />
 					</section>
 					<section>
 						<p>
 							Your local repository remembers the state of each remote. This state is updated every time you do
 							<br />a <code>git fetch</code>. (<code>git pull</code> uses <code>git fetch</code>)
+							<br /><img src="assets/images/macbook_pro_with_octocat.png" height="256" width="256" style="vertical-align: middle;" /> ◄►
+							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
 						</p>
-						<br /><img src="assets/images/macbook_pro_with_octocat.png" height="256" width="256" style="vertical-align: middle;" /> ◄►
-						<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
 					</section>
 				</section>
 
@@ -300,9 +305,7 @@
 						<code>git clone git@github.com:ign/project.git</code>
 						<p style="margin-top: 0.8em;">
 							Makes a local copy of the remote<br />repository for you to work in.
-						</p>
-						<p>
-							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<br /><img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
 							<img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" />
 						</p>
 					</section>
@@ -438,8 +441,8 @@
 					<section>
 						<p>
 							To view changes that have been staged in the index, use
+							<code>git diff --cached</code>
 						</p>
-						<code>git diff --cached</code>
 					</section>
 				</section>
 
@@ -501,8 +504,8 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					<section>
 						<p>
 							Changes in master that are not in your branch will not be shown. To show the actual diff, use two dots instead.
+							<br /><code>git diff master..&lt;branch&gt;</code>
 						</p>
-						<code>git diff master..&lt;branch&gt;</code>
 					</section>
 				</section>
 
@@ -512,9 +515,7 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 						<code>git push -u origin &lt;branch&gt;</code>
 						<p style="margin-top: 0.8em;">
 							Pushes changes in <code>branch</code> to <code>origin</code>, making<br />your changes accessible to others.
-						</p>
-						<p>
-							<img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<br /><img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" /> ►
 							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
 						</p>
 					</section>
@@ -536,26 +537,8 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 						<code>git pull</code>
 						<p style="margin-top: 0.8em;">
 							Updates your current branch with<br />changes from <code>origin</code>.
-						</p>
-						<p>
-							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<br /><img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
 							<img src="assets/images/macbook_pro.png" height="256" width="256" style="vertical-align: middle;" />
-						</p>
-					</section>
-					<section>
-						<p>
-							If you want to pull from <code>upstream</code>, use<br /><code>git pull upstream</code>.
-						</p>
-					</section>
-					<section>
-						<p>
-							You probably want to push to <code>origin</code> to update your fork after you pull from <code>upstream</code>.
-						</p>
-					</section>
-					<section>
-						<p>
-							If you're using a fork, don't commit to the <code>master</code> branch (or any branch that exists in <code>upstream</code>).
-							Set <code>master</code> aside for pulling down code from <code>upstream</code> and make all your changes in a branch.
 						</p>
 					</section>
 					<section>
@@ -567,9 +550,7 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 						<h2>git fetch</h2>
 						<p>
 							Downloads changes from a remote repository, updating your local repository. Your local branches and working directory are <i>not</i> updated.
-						</p>
-						<p>
-							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<br /><img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" /> ►
 							<img src="assets/images/macbook_pro_with_octocat.png" height="256" width="256" style="vertical-align: middle;" />
 						</p>
 					</section>
@@ -630,6 +611,7 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					<ul>
 						<li>When to Branch</li>
 						<li>Pull Requests</li>
+						<li>Working with Forks</li>
 					</ul>
 				</section>
 
@@ -680,6 +662,48 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					<section>
 						<p>
  							What happens after the code is merged<br />depends on the project.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Working with Forks</h2>
+						<p>
+							A fork is your personal copy of a repository.
+							<br /><img src="assets/images/octocat_with_ign.png" height="256" width="256" style="vertical-align: middle;" /> ►
+							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
+						</p>
+					</section>
+					<section>
+						<p>
+							You won't always have write access to a project's<br />main repository, but you can fork any repository<br />you have read access to.
+						</p>
+					</section>
+					<section>
+						<p>
+							Forks can be little more complicated because you have two repositories to deal with instead of just one.
+						</p>
+					</section>
+					<section>
+						<p>
+							Fortunately, the concepts are mostly the same. Work in a branch (in your fork), pull periodically from upstream, and submit a pull request when you're ready to ship.
+						</p>
+					</section>
+					<section>
+						<p>
+							If you're using a fork, don't commit to the <code>master</code> branch (or any branch that exists in <code>upstream</code>).
+							Instead, set <code>master</code> aside for tracking <code>upstream</code> and make all your changes in a branch.
+						</p>
+					</section>
+					<section>
+						<p>
+							To update your <code>master</code> branch, switch to <code>master</code>,<br />do a pull from <code>upstream</code>, then push it to<br />your fork (<code>origin</code>).
+						</p>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">git checkout master
+git pull upstream
+git push origin master
+</code></pre>
 						</p>
 					</section>
 				</section>
