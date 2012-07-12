@@ -489,7 +489,13 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					</section>
 					<section>
 						<p>
-							You should compare your branch with master before you push (publish your code) to make sure the changes are what you think they should be.
+							You should compare your branch with master before you push (publish your code) to make sure the changes<br />are what you think they should be.
+						</p>
+					</section>
+					<section>
+						<p>
+							You should make sure your local <code>master</code> is up to date before diffing.
+							Alternatively, you could diff against <code>origin/master</code>, but you still have to make sure your remote is up to date.
 						</p>
 					</section>
 					<section>
@@ -543,7 +549,18 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					</section>
 					<section>
 						<p>
-							This is actually a shortcut for two other operations:<br /><code>git fetch</code> and <code>git merge</code>.
+							You probably want to push to <code>origin</code> to update your fork after you pull from <code>upstream</code>.
+						</p>
+					</section>
+					<section>
+						<p>
+							If you're using a fork, don't commit to the <code>master</code> branch (or any branch that exists in <code>upstream</code>).
+							Set <code>master</code> aside for pulling down code from <code>upstream</code> and make all your changes in a branch.
+						</p>
+					</section>
+					<section>
+						<p>
+							<code>git pull</code> is actually a shortcut for two other operations: <code>git fetch</code> and <code>git merge</code>.
 						</p>
 					</section>
 					<section>
