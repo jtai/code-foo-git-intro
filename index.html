@@ -131,6 +131,10 @@
 							A personal copy of a repository.
 							<br /><img src="assets/images/octocat_with_ign.png" height="256" width="256" style="vertical-align: middle;" /> ►
 							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
+						</p>
+					</section>
+					<section>
+						<p>
 							If you don't have write access to a repository, you can make your own copy of it and commit to the copy.
 						</p>
 					</section>
@@ -324,6 +328,9 @@
 						<p>
 							If you have a fork, make sure to clone the fork,<br />not the original repository.
 						</p>
+						<p style="margin-top: 0.8em;">
+							<code style="white-space: nowrap;">git clone git@github.com:<b style="font-size: 130%;">jtai</b>/project.git</code>
+						</p>
 					</section>
 					<section>
 						<p>
@@ -342,10 +349,20 @@
 						</p>
 					</section>
 					<section>
-						<p>You should create a branch for every feature<br />or bug you work on. More on this later.</p>
+						<p>
+							You should create a branch for every feature<br />or bug you work on. More on this later.
+						</p>
 					</section>
 					<section>
-						<p>To switch branches, use <code>git checkout &lt;branch&gt;</code> (without the <code>-b</code>).</p>
+						<p>
+							To switch branches, use <code>git checkout &lt;branch&gt;</code> (without the <code>-b</code>).
+						</p>
+					</section>
+					<section>
+						<p>
+							If you need the branch on a second machine, first make sure it's pushed to GitHub from the original machine.
+							Then do a <code>git pull</code> on the second machine, and use <code>git checkout &lt;branch&gt;</code> to switch to the branch.
+						</p>
 					</section>
 				</section>
 
@@ -469,7 +486,7 @@
 							If necessary, a more detailed explanation (perhaps<br />of <i>why</i> you made the change) should follow<br />after an empty blank line.
 						</p>
 						<pre><code contenteditable style="font-size: 16px; margin-top: 20px;">commit b8803de64e724cde0e802053e031189726b5caed
-Author: Jonathan Tai <jtai@ign.com>
+Author: Jonathan Tai &lt;<script>var x2 = 'ai@'; x1 = 'jt'; x3 = 'ign.com'; document.write(x1 + x2 + x3);</script>&gt;
 Date:   Fri Jul 6 11:34:00 2012 -0700
 
     Updated object migration to use new release status field for all regions
@@ -675,30 +692,24 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					<section>
 						<h2>Working with Forks</h2>
 						<p>
-							A fork is your personal copy of a repository.
+							Forks can be little more complicated because you have two repositories to deal with instead of just one.
 							<br /><img src="assets/images/octocat_with_ign.png" height="256" width="256" style="vertical-align: middle;" /> ►
 							<img src="assets/images/octocat.png" height="256" width="256" style="vertical-align: middle;" />
 						</p>
 					</section>
 					<section>
 						<p>
-							You won't always have write access to a project's<br />main repository, but you can fork any repository<br />you have read access to.
-						</p>
-					</section>
-					<section>
-						<p>
-							Forks can be little more complicated because you have two repositories to deal with instead of just one.
-						</p>
-					</section>
-					<section>
-						<p>
 							Fortunately, the concepts are mostly the same. Work in a branch (in your fork), pull periodically from upstream, and submit a pull request when you're ready to ship.
+							<br /><img src="assets/images/working_with_forks.png" height="360" width="480" />
+						</p>
+						<p style="margin-top: 0.8em;">
+							<i><small>(Diagram is vastly over-simplified)</small></i>
 						</p>
 					</section>
 					<section>
 						<p>
 							If you're using a fork, don't commit to the <code>master</code> branch (or any branch that exists in <code>upstream</code>).
-							Instead, set <code>master</code> aside for tracking <code>upstream</code> and make all your changes in a branch.
+							Instead,<br />set <code>master</code> aside for tracking <code>upstream</code><br />and make all your changes in a branch.
 						</p>
 					</section>
 					<section>
@@ -708,6 +719,15 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">git checkout master
 git pull upstream
 git push origin master
+</code></pre>
+						</p>
+					</section>
+					<section>
+						<p>
+							Once your fork (<code>origin</code>) is up to date, merge from master into your branch to update it just as you<br />would if you weren't using a fork.
+						</p>
+						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">git checkout &lt;branch&gt;
+git merge master
 </code></pre>
 						</p>
 					</section>
@@ -724,7 +744,7 @@ git push origin master
 						Branches are cheap, and commits are fast. Don't work on something for a week, then check it all in at once.
 					</p>
 					<p style="margin-top: 0.8em;">
-						<i><small>(But don't over-do it, every commit should at least parse/build).</small></i>
+						<i><small>(But don't over-do it, every commit should at least parse/build)</small></i>
 					</p>
 				</section>
 
@@ -756,9 +776,23 @@ git push origin master
 					</section>
 					<section>
 						<p>
-							<code>git pull origin master</code> merges changes from the remote <code>master</code> branch directly into your current local branch.
-							This happens even if your current local branch<br />is not <code>master</code>.
-							Further, your local copy of <code>origin/master</code> is not updated.
+							<code>git pull origin master</code> merges changes<br />from the remote <code>master</code> branch directly into<br />your current local branch.
+						</p>
+					</section>
+					<section>
+						<p>
+							A bare <code>git pull</code> will only merge a remote branch into a local branch with the same name<sup>*</sup>.
+						</p>
+						<p style="margin-top: 0.8em;">
+							With a refspec, <code>git pull</code> acts more like <code>git merge</code>, so you can accidentally merge two branches when you just meant to update your branch.
+						</p>
+						<p style="margin-top: 2em;">
+							<i><small style="vertical-align: middle;">Actually, it will use the tracking branch configuration you specified using <code>git push -u</code>, but unless you have a really odd configuration, local and remote branch names will be the same</small></i>
+						</p>
+					</section>
+					<section>
+						<p>
+							Further, the remote references on your machine are<br />not updated, so git status will say you're ahead<br />of origin when you're really not.
 						</p>
 					</section>
 					<section>
