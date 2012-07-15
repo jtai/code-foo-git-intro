@@ -361,6 +361,8 @@
 					<section>
 						<p>
 							If you need the branch on a second machine, first make sure it's pushed to GitHub from the original machine.
+						</p>
+						<p style="margin-top: 0.8em;">
 							Then do a <code>git pull</code> on the second machine, and use <code>git checkout &lt;branch&gt;</code> to switch to the branch.
 						</p>
 					</section>
@@ -372,13 +374,12 @@
 				</section>
 
 				<section>
-					<section>
-						<h2>Checking Status</h2>
-						<code>git status</code>
-						<p style="margin-top: 0.8em;">
-							Shows you the state of your working directory,<br />the index, and the remote.
-						</p>
-						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;"># On branch master
+					<h2>Checking Status</h2>
+					<code>git status</code>
+					<p style="margin-top: 0.8em;">
+						Shows you the state of your working directory,<br />the index, and the remote.
+					</p>
+					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;"># On branch master
 # Your branch is ahead of 'origin/master' by 5 commits.
 #
 # Changes to be committed:
@@ -397,16 +398,7 @@
 #
 #	assets/images/git_url.png
 #	assets/images/programming.gif
-						</code></pre>
-					</section>
-					<section>
-						<p><code>git status</code> answers questions like</p>
-						<ul style="margin-top: 0.8em;">
-							<li>What files have I added to the index?</li>
-							<li>What files might I need to add to the<br />index before I commit?</li>
-							<li>Do I need to push?</li>
-						</ul>
-					</section>
+					</code></pre>
 				</section>
 
 				<section>
@@ -786,7 +778,8 @@ git merge master
 							With a refspec, <code>git pull</code> acts more like <code>git merge</code>, so you can accidentally merge two branches when you just meant to update your branch.
 						</p>
 						<p style="margin-top: 2em;">
-							<i><small style="vertical-align: middle;">Actually, it will use the tracking branch configuration you specified using <code>git push -u</code>, but unless you have a really odd configuration, local and remote branch names will be the same</small></i>
+							<i><small style="vertical-align: middle;">Actually, it will use the tracking branch configuration you specified using <code>git push -u</code>,
+							but unless you have a really odd configuration, local and remote branch names will be the same</small></i>
 						</p>
 					</section>
 					<section>
