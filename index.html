@@ -716,10 +716,11 @@ Date:   Fri Jul 6 11:34:00 2012 -0700
 					</section>
 					<section>
 						<p>
-							To update your <code>master</code> branch, switch to <code>master</code>,<br />do a pull from <code>upstream</code>, then push it to<br />your fork (<code>origin</code>).
+							To update your <code>master</code> branch, switch to <code>master</code>,<br />do a fetch and merge from <code>upstream</code>, then push it to<br />your fork (<code>origin</code>).
 						</p>
 						<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">git checkout master
-git pull upstream
+git fetch upstream
+git merge upstream/master
 git push origin master
 </code></pre>
 						</p>
